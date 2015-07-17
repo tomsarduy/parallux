@@ -1,0 +1,30 @@
+img {
+  display: block;
+  width: 100%; }
+
+html, body {
+  height: 100%; }
+
+.parallax-item {
+  height: 900px;
+  position: relative;
+  overflow: hidden; }
+  .parallax-item .wrapper {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    height: 900px;
+    z-index: 10;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden; }
+    .parallax-item .wrapper .background {
+      position: fixed;
+      height: 900px;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden; }
+      .parallax-item .wrapper .background img {
+        position: relative; }
