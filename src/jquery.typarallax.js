@@ -1,15 +1,11 @@
-
-
 /*
- *  jquery-boilerplate - v3.4.0
+ *  jquery.typarallax.js - v0.0.1
  *  Another jQuery Plugin for Parallax Animation
- *  http://tomsarduy.github.io
+ *  http://tomsarduy.github.io/typarallax
  *
  *  Made by Tomás J. Ramírez, Yoan Ribbot
  *  Under MIT License
  */
-// the semi-colon before function invocation is a safety net against concatenated
-// scripts and/or other plugins which may not be closed properly.
 
 
 //Polyfill for requestAnimationFrame
@@ -44,7 +40,7 @@
 (function($){
 
     $.fn.tyParallax = function(){
-    	var $elems =$(this);
+    	var $elems = $(this);
     	var $window = $(window);
 
 			//Better than calling render in the $scroll jquery function
