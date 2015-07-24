@@ -40,7 +40,6 @@
 
 }());
 
-
 (function($){
 
     $.fn.tyParallax = function(){
@@ -52,7 +51,6 @@
 			  window.requestAnimationFrame(animloop);
 			  render();
 			}
-
 			/* 
 				We call this function using the requestAnimationFrame() function instead
 				of a setInterval or inside the scroll event in windows
@@ -86,23 +84,9 @@
 			      	This is where the magic happens, applying transform3d to the background layer
 			      	and the container, to simulate the parallax effect
 			      */
-						$back.css(
-						{
-							'-ms-transform':     'translate3d(0,'+($offsetTop-$scrollY)+'px,0)',
-							'-webkit-transform': 'translate3d(0,'+($offsetTop-$scrollY)+'px,0)',
-							'-moz-transform':    'translate3d(0,'+($offsetTop-$scrollY)+'px,0)',
-							'-o-transform':    'translate3d(0,'+($offsetTop-$scrollY)+'px,0)',
-							'transform':         'translate3d(0,'+($offsetTop-$scrollY)+'px,0)'
-						});
 
-						$backinner.css(
-						{
-							'-ms-transform':     'translate3d(0,'+($diffElem)+',0)',
-							'-webkit-transform': 'translate3d(0,'+($diffElem)+',0)',
-							'-moz-transform':    'translate3d(0,'+($diffElem)+',0)',
-							'-o-transform':    'translate3d(0,'+($diffElem)+',0)',
-							'transform':         'translate3d(0,'+($diffElem)+',0)'
-						});
+						$back.css('transform','translate3d(0,'+($offsetTop-$scrollY)+'px,0)');
+						$backinner.css('transform', 'translate3d(0,'+($diffElem)+',0)');
 
 			    }
 			    else{
@@ -113,13 +97,7 @@
 							only do parallax in one or two layers at the same time.
 			    	*/
 
-			      $back.css({
-			        '-ms-transform': 'translate3d(0,-9000px,0)',
-			        '-webkit-transform': 'translate3d(0,-9000px,0)',
-			        '-moz-transform': 'translate3d(0,-9000px,0)',
-			        '-o-transform': 'translate3d(0,-9000px,0)',
-			        'transform': 'translate3d(0,-9000px,0)'
-			      });
+			      $back.css('transform', 'translate3d(0,-9000px,0)');
 			    }
 			  });
 			}
@@ -168,13 +146,7 @@
 
 					var diffX = -($img.width()- $winW)/2;
 					var diffY = -($img.height()- $winH)/2;
-					$img.css({
-						'-ms-transform':     'translate('+diffX+'px,'+diffY+'px)',
-						'-webkit-transform': 'translate('+diffX+'px,'+diffY+'px)',
-						'-moz-transform':    'translate('+diffX+'px,'+diffY+'px)',
-						'-o-transform':      'translate('+diffX+'px,'+diffY+'px)',
-						'transform':         'translate('+diffX+'px,'+diffY+'px)'
-					});
+					$img.css('transform', 'translate('+diffX+'px,'+diffY+'px)');
 
 				});
 			}
@@ -183,12 +155,11 @@
 				updateHeight();
 			  simulateCover();
 			});
+
 			/* 
 				If the browser support CSS transforms 3D and is not a tablet or mobile
 				then let's do it!
 			*/
-
-
 			if(Modernizr.csstransforms3d && Modernizr.mq('only all and (min-width: 1025px)')){
 				
 				//Find the background layer
@@ -198,6 +169,18 @@
 				//Function that iterates trough the parallax items
 				animloop();
 			}
+
+			//Attaching the onload event to the images
+			$elems.find("img").one("load", function() {
+					console.log($(this).attr('src'));
+          simulateCover(true);
+          $(this).fadeIn('slow');
+        }).each(function() {
+        	//If the image is already in cache
+          if(this.complete){ 
+          	$(this).load(); 
+          }
+        });
 
 			updateHeight();
 			simulateCover();

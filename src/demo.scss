@@ -8,12 +8,16 @@ body{
 }
 .text{
 	h2{
+		font-size: 2.5em;
 		font-weight: bold;
 		text-transform: uppercase;
 	}
 	p{
 		font-weight: 300;
+		font-size: 1.5em;
 	}
+	max-width: 90%;
+	margin-left: 5%;
 	position: absolute;
 	top: 25%;
 
@@ -29,6 +33,7 @@ body{
 @media screen and (min-width: 768px) {
 
 	.text{
+		
 		h2 {
 			font-size: 2.5em;
 		}
@@ -39,6 +44,7 @@ body{
 		text-align: center;
 		color: #fff;
 		max-width: 50%;
+		margin-left: 25%;
 		font-size: 1.5em;
 		-webkit-text-shadow: 1px 1px 3px #000;
 		-moz-text-shadow: 1px 1px 3px #000;
@@ -47,11 +53,12 @@ body{
 		text-shadow: 1px 1px 3px #000;
 	}
 
-	.csstransforms3d{
+	.csstransforms{
 		.text{
 				position: absolute;
 				left: 50%;
 				top: 50%;
+				margin-left: auto;
 				-webkit-transform: translate(-50%, -50%);
 				-moz-transform: translate(-50%, -50%);
 				-ms-transform: translate(-50%, -50%);
