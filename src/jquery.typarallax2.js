@@ -28,7 +28,8 @@
     var defaults   = {
         fullHeight: true,
         speed: 1.5,
-        backgrounds:true
+        backgrounds:true,
+        parallaxHeight: '100%'
     };
 
     // The actual plugin constructor

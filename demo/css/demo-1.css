@@ -8,10 +8,11 @@ html, body {
 #bg-1, #bg-2, #bg-3 {
   background-size: cover;
   background-attachment: fixed;
-  background-position: 50%; }
+  background-position: 50%;
+  background-color: #999; }
 
 #bg-1 {
-  background-image: url("../img/img-1.jpg"); }
+  background-image: url("http://lorempixel.com/1800/1200"); }
 
 #bg-2 {
   background-image: url("../img/img-2.jpg"); }
