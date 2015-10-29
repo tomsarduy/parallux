@@ -6,6 +6,8 @@ body{
 	font-family: 'Roboto', sans-serif;
 	line-height: 1.5;
 }
+
+// Styles for Demo texts
 .text{
 	h2{
 		font-size: 2.5em;
@@ -31,7 +33,7 @@ body{
 }
 
 @media screen and (min-width: 768px) {
-
+	// Styles for Demo texts in mobile
 	.text{
 		
 		h2 {

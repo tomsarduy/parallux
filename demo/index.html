@@ -15,7 +15,6 @@
 		<link rel="stylesheet" href="../dist/normalize.min.css">
 		<link rel="stylesheet" href="../dist/jquery.typarallax.min.css">
 		<link rel="stylesheet" href="css/demo.css">
-		<link rel="stylesheet" href="css/demo-1.css">
 	</head>
 	<body>
 
@@ -23,9 +22,9 @@
 			<div class="ty-parallax">
 
 				<!-- Background layer -->
-				<div class="ty-background">
+				<div class="ty-background fixed">
 					<!-- Div for using translate3d -->
-					<div class="ty-inner">
+					<div class="ty-inner dark">
 						<!-- Here you can insert any HTML you want -->
 						<img class="cover" src="http://lorempixel.com/1800/1200">
 					</div>
@@ -43,10 +42,10 @@
 			<div class="ty-parallax">
 
 				<!-- Background layer -->
-				<div class="ty-background">
+				<div class="ty-background fixed">
 
 					<!-- Div for using translate3d -->
-					<div class="ty-inner">
+					<div class="ty-inner light">
 
 						<!-- Here you can insert any HTML you want -->
 						<img class="cover" src="http://lorempixel.com/1024/768/nature/2">
@@ -67,10 +66,10 @@
 			<div class="ty-parallax">
 
 				<!-- Background layer -->
-				<div class="ty-background">
+				<div class="ty-background fixed">
 
 					<!-- Div for using translate3d -->
-					<div class="ty-inner">
+					<div class="ty-inner dark">
 
 						<!-- Here you can insert any HTML you want -->
 						<img class="cover" src="http://lorempixel.com/1024/768/nature/3">
@@ -88,7 +87,7 @@
 			</div>
 
 		<script src="../dist/jquery.min.js"></script>
-		<script src="../src/jquery.typarallax.js"></script>
+		<script src="../src/jquery.typarallax2.js"></script>
 		<script>
 			$(function() {
 				$(".ty-parallax").tyParallax();

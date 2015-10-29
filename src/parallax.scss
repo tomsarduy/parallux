@@ -7,38 +7,59 @@ html, body{
 	position: relative;
 
 	.ty-background{ 
-		  top: 0;
-		  left:0;
-		  right: 0;
-		  bottom: 0;
-		  overflow: hidden;
+		top: 0;
+		left:0;
+		right: 0;
+		bottom: 0;
+		overflow: hidden;
 
-		  &.fixed{
-		  	position: fixed; 
-		  }
-		  &.relative{
-		  	position: relative;		  	
-		  }
-
+		&.fixed{
+			position: fixed; 
+		}
+		&.relative{
+			position: relative;		  	
+		}
+		
 		.ty-inner{
-		  top: 0px;
-		  left: 0px;
-		  position: relative;
-		  
-		  min-width: 100%;
-		  min-height: 100%;
-		  height: auto;
-		  background: transparent no-repeat 50% 50%;
-		  background-size: cover;
-		  //To fix a bug when text inside jump in Firefox/Safari
-		  background-attachment: fixed;
-		  background-image: url();
+	  		top: 0px;
+			left: 0px;
+			position: relative;
 
-		  img{
-		  	max-width: 100%;
-		  	max-height: 100%;
-		  	display: none;
-		  }
+			min-width: 100%;
+			min-height: 100%;
+			height: auto;
+			background-color: white;
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: cover;
+			//To fix a bug when text inside jump in Firefox/Safari
+			background-attachment: fixed;
+			background-image: url();
+
+			img{
+				max-width: 100%;
+				max-height: 100%;
+				display: none;
+			}
+
+			&.dark-1{
+				background-color: #084550;
+			}
+			&.dark-2{
+				background-color: #292A31;
+			}
+			&.dark-3{
+				background-color: #2B443B;
+			}
+			&.light-1{
+				background-color: #E2EAD9;
+			}	
+			&.light-2{
+				background-color: #E4DFF3;
+			}
+			&.light-3{
+				background-color: #F9E2D4;
+			}
 		}
 	}
 }

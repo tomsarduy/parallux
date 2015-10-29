@@ -57,6 +57,7 @@
 			*/
 
 			function render() {
+				console.log('calling render');
 			  $elems.each(function(){
 
 			  	// assigning the object front and back
