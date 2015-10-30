@@ -32,6 +32,14 @@ body{
 	text-shadow: 1px 1px 3px #000;
 }
 
+.separator{
+	max-width: 960px;
+	padding: 50px;
+	font-size: 18px;
+	margin: 0 auto;
+	text-align: center;
+}
+
 @media screen and (min-width: 768px) {
 	// Styles for Demo texts in mobile
 	.text{

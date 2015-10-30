@@ -71,27 +71,27 @@
 		}
 
 		if (!window.getComputedStyle) {
-				return false;
+			return false;
 		}
 
 		var el = document.createElement('p'), 
-				has3d,
-				transforms = {
-						'webkitTransform':'-webkit-transform',
-						'OTransform':'-o-transform',
-						'msTransform':'-ms-transform',
-						'MozTransform':'-moz-transform',
-						'transform':'transform'
-				};
+			has3d,
+			transforms = {
+				'webkitTransform':'-webkit-transform',
+				'OTransform':'-o-transform',
+				'msTransform':'-ms-transform',
+				'MozTransform':'-moz-transform',
+				'transform':'transform'
+			};
 
 		// Add it to the body to get the computed style.
 		document.body.insertBefore(el, null);
 
 		for (var t in transforms) {
-				if (el.style[t] !== undefined) {
-						el.style[t] = "translate3d(1px,1px,1px)";
-						has3d = window.getComputedStyle(el).getPropertyValue(transforms[t]);
-				}
+			if (el.style[t] !== undefined) {
+				el.style[t] = "translate3d(1px,1px,1px)";
+				has3d = window.getComputedStyle(el).getPropertyValue(transforms[t]);
+			}
 		}
 
 		document.body.removeChild(el);
@@ -114,12 +114,12 @@
 		this._defaults = defaults;
 		this._name = pluginName;
 
-		this.init();
+		this.init(element);
 	}
 
 	Plugin.prototype = {
 
-		init: function() {
+		init: function(element) {
 			console.log(this.element);
 			// Initialization logic here
 
@@ -128,16 +128,18 @@
 	        var self = this;			
 
 			//Onload image event
-			$(this.element).find("img.cover").one("load", function() {
-				$(this).fadeIn();
+			$cover = $(element).find("img.cover");
+			$cover.one("load", function() {
 				self.simulateCover();
+				$(this).fadeIn();
 
-	        }).each(function() {
-	        	//If the image is already in cache
-	            if(this.complete){ 
-		        	$(this).load(); 
-		        }
+
 	        });
+
+			//Firefox onload issue
+	        if($cover.complete){ 
+	        	$cover.load(); 
+	        }
 
 	        $window.bind('orientationchange, resize', function() {
 			  	self.updateHeight();
@@ -148,7 +150,7 @@
 	        //The parallax container method using requestAnimationFrame
 	        $window.scroll(function() {
 	        	//The performance trick ;)
-				window.requestAnimationFrame(self.render.bind(self));
+				self.render();
 	        }).trigger('scroll');
 		},
 
