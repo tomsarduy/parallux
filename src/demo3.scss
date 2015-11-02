@@ -1,0 +1,11 @@
+.ty-parallax{
+	height: 600px;
+	.ty-background{
+		.ty-inner{
+			&.bg-header{
+				background-image: url(../img/banner.jpg);
+			}
+		}
+	} 
+}
+

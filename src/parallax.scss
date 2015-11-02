@@ -1,12 +1,18 @@
 html, body{
 	height: 100%;
 }
+.parallux.not-full{
+	.parallux-bg{
+		height: 100%;
+		bottom: initial;
+	}
+}
 
-.ty-parallax{
+.parallux{
 
 	position: relative;
 
-	.ty-background{ 
+	.parallux-bg{ 
 		top: 0;
 		left:0;
 		right: 0;
@@ -20,7 +26,7 @@ html, body{
 			position: relative;		  	
 		}
 		
-		.ty-inner{
+		.parallux-inner{
 	  	top: 0px;
 			left: 0px;
 			position: relative;
