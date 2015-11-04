@@ -1,7 +1,13 @@
-.ty-parallax{
+.parallux{
 	height: 600px;
-	.ty-background{
-		.ty-inner{
+	z-index: 1;
+	.parallux-bg{
+		.parallux-inner{
+			.text{
+				p{
+					font-size: 22px;
+				}
+			}
 			&.bg-header{
 				background-image: url(../img/banner.jpg);
 			}
@@ -9,3 +15,11 @@
 	} 
 }
 
+.wrapper{
+	background-color: #FFF;
+	width: 100%;
+	z-index: 2;
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	transform: translateZ(0);
+}

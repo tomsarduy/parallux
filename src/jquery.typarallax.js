@@ -30,7 +30,9 @@
         bgset = false,
         animate3d=false,
         defaults   = {
-            fullHeight: true
+            fullHeight: true,
+            enableMobile: false,
+            onImageLoad: 'fadeIn'
         };
 
     //window.requestAnimationFrame Polyfill for Old Browsers

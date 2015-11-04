@@ -6,7 +6,7 @@
 		"Tom Sarduy <tom.sarduy@gmail.com>"
 		"Yoan Ribot <yoanribot@gmail.com>"
 	],
-	"description": "Another jquery crossbrowser parallax plugin for performance .",
+	"description": "Another jquery crossbrowser parallax plugin for performance obsessed.",
 	"main": "src/jquery.parallux.js",
 	"keywords": [
 		"jquery",

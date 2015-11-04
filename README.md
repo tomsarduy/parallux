@@ -1,10 +1,8 @@
-# jQuery Boilerplate [![Build Status](https://secure.travis-ci.org/jquery-boilerplate/jquery-boilerplate.svg?branch=master)](https://travis-ci.org/jquery-boilerplate/jquery-boilerplate) ![Bower Version](https://badge.fury.io/bo/jquery-boilerplate.svg)
+# jQuery Parallux [![Build Status](https://secure.travis-ci.org/jquery-boilerplate/jquery-boilerplate.svg?branch=master)](https://travis-ci.org/jquery-boilerplate/jquery-boilerplate) ![Bower Version](https://badge.fury.io/bo/jquery-boilerplate.svg)
 
-### A jump-start for jQuery plugins development
+### Parallax for everything without complications
 
-So, you've tried your hand at writing jQuery plugins and you're comfortable putting together something that probably works. Awesome! Thing is, you think there might be better ways you could be writing them - you've seen them done a number of different ways in the wild, but aren't really sure what the differences between these patterns are or how to get started with them.
-
-This project won't seek to provide a perfect solution to every possible pattern, but will attempt to cover a simple template for beginners and above. By using a basic defaults object, simple constructor for assigning the element to work with and extending options with defaults and a lightweight wrapper around the constructor to avoid issues with multiple instantiations.
+I have been trying to find a light jquery parallax plugin, to do parallax with any kind of content (video, images, texts, sliders), but there was just few options and most of them just support background images and the performance was not good enough, and no fallback for old browsers not supporting translate3D. At the end, I came up with my own solution after reading and investigate about the current support/issues/bugs with the parallax scroll effect.
 
 ## Usage
 
@@ -17,16 +15,60 @@ This project won't seek to provide a perfect solution to every possible pattern,
 2. Include plugin's code:
 
 	```html
-	<script src="dist/jquery.boilerplate.min.js"></script>
+	<script src="dist/jquery.parallux.min.js"></script>
 	```
 
-3. Call the plugin:
+3. Set the HTML scructure:
+
+	```html
+		<!-- Parallax Item -->
+		<div class="parallux">
+
+			<!-- Background layer -->
+			<div class="parallux-bg">
+
+				<!-- Div for parallax efect -->
+				<div class="parallux-inner">
+
+					<!-- Any HTML elements you want -->
+
+				</div>
+
+			</div>
+
+			<!-- Parallax foreground -->
+
+		</div> 
+	```
+
+4. Call the plugin
 
 	```javascript
-	$("#element").defaultPluginName({
-		propertyName: "a custom value"
+	$("#element").parallux({
+		fullHeight: true,
+    enableMobile: false,
+    onImageLoad: 'fadeIn'
 	});
 	```
+
+##Features
+
+####Parallaxing everything
+
+You can add all kind of content inside the background layer, it will works. I tested with videos, images (`<img>` tags), background, sliders (slick), text, and it works just fine, since CSS3 translate3D create a layer and use hardware accelerator.
+
+####Foreground and Background layers
+
+Sometimes you may want to add some elements inside the parallax wrapper that use the normal scroll speed, so I added a layer for foreground elements and another one for the background layer (the real one doing parallax), check the demos and you will see what I'm talking about.
+
+####Fallback for Old Browsers
+If the browser don't support translate3D, I decided to not do parallax at all. But the layer will be fixed in the background, so it will be very similar. Is proved that the scroll performance animating `position-x` and `position-y` will be a problem.
+
+####Fallback in Mobile
+In the last version of Safari and Chrome for mobile, there is already support for translate3d! That is great, but still is not very smooth and depends a lot of the mobile hardware. For example, in Safari and iPhone 6 works great, but not in Chrome in a regular Android device, so I added an option (`enableMobile=false`) and it's up to you to enable parallax on mobile devices.
+
+####Crossbrowser issues resolved
+You don't want to know how many crossbrowser issues I went trough while developing this plugin, but most of them are resolved using CSS hacks and scroll improvements, thanks to [StackOverflow](stackoverflow.com/users/670377/tom-sarduy)
 
 ## Structure
 
@@ -36,8 +78,8 @@ The basic structure of the project is given in the following way:
 ├── demo/
 │   └── index.html
 ├── dist/
-│   ├── jquery.boilerplate.js
-│   └── jquery.boilerplate.min.js
+│   ├── jquery.parallux.js
+│   └── jquery.parallux.min.js
 ├── src/
 │   ├── jquery.boilerplate.coffee
 │   └── jquery.boilerplate.js

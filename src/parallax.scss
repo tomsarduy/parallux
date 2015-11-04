@@ -18,7 +18,8 @@ html, body{
 		right: 0;
 		bottom: 0;
 		overflow: hidden;
-
+		-webkit-backface-visibility: hidden;
+		-webkit-perspective: 1000;
 		&.fixed{
 			position: fixed; 
 		}
@@ -41,6 +42,8 @@ html, body{
 			//To fix a bug when text inside jump in Firefox/Safari
 			background-attachment: fixed;
 			background-image: url();
+			-webkit-backface-visibility: hidden;
+			-webkit-perspective: 1000;
 
 			img{
 				max-width: 100%;
