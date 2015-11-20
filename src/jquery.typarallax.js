@@ -112,7 +112,35 @@
     }
     animate3d = support3d();
 
+    /**
+     * detect IE
+     * returns version of IE or false, if browser is not Internet Explorer
+     */
+    function detectIE() {
+        var ua = window.navigator.userAgent;
 
+        var msie = ua.indexOf('MSIE ');
+        if (msie > 0) {
+            // IE 10 or older => return version number
+            return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+        }
+
+        var trident = ua.indexOf('Trident/');
+        if (trident > 0) {
+            // IE 11 => return version number
+            var rv = ua.indexOf('rv:');
+            return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+        }
+
+        var edge = ua.indexOf('Edge/');
+        if (edge > 0) {
+           // IE 12 (aka Edge) => return version number
+           return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+        }
+
+        // other browser
+        return false;
+    }
 
     // The actual plugin constructor
     function Plugin( element, options ) {
@@ -174,9 +202,9 @@
             var is_safari = navigator.userAgent.indexOf("Safari") > -1;
 
             //Issue with Safari iPad and iPhones
-            if(is_mobile || is_safari){
+            if(!is_mobile && !is_safari){
                 //Not supporting background-attachment fixed
-                $(element).find('.parallux-inner').css('background-attachment', 'initial');
+                $(element).addClass('bg-fixed');
             }
 
             //If mobile and no parallax enabled hack z-indexs
@@ -188,26 +216,54 @@
                 });
             }
 
-            if(animate3d && (this.options.enableMobile && is_mobile || !is_mobile)) { 
+            if(animate3d) {
 
+                //If is Mobile is better to do the parallax in SetInterval
                 if(this.options.enableMobile && is_mobile){
                     var mobileRender = self.render.bind(self);
                     interval = setInterval(function () {
                         window.requestAnimationFrame(mobileRender);
                     }, 10);
                 }
-                else{
+
+                if(!is_mobile){
                     //If is Desktop is better to throw it directly in scroll
-                    $window.scroll(function() {
+
+                    $window.scroll(function () {
                         self.render();
                     });
+
+
+                    //IE Fix
+                    if(detectIE()) { // if IE
+
+                        if(detectIE()>=11){
+                            $('body').on("mousewheel", function () {
+                                // remove default behavior
+                                event.preventDefault(); 
+
+                                //scroll without smoothing
+                                var wheelDelta = event.wheelDelta;
+                                var currentScrollPosition = window.pageYOffset;
+                                window.scrollTo(0, currentScrollPosition - wheelDelta/4);
+                            });
+                            $window.scroll();
+                        }
+                        else{
+                            $(window).off('scroll');
+                            this.disableParallax();
+                        }
+                    }
                 }
             }
             
             else{
-                $(element).css('overflow', 'hidden');
-                $(element).find('.parallux-bg');
+                this.disableParallax()    
             }
+        },
+
+        disableParallax: function(){
+            $(this.element).removeClass('bg-fixed').addClass('no-parallax');
         },
 
         mobileHandler: function () {

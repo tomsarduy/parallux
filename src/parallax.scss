@@ -8,9 +8,24 @@ html, body{
 	}
 }
 
+.parallux.no-parallax{
+	overflow: hidden;
+	.parallux-bg{
+		position: relative;
+	}
+	.parallux-bg, .parallux-inner{
+		background-attachment: initial;
+	}
+}
+
 .parallux{
 
 	position: relative;
+	&.bg-fixed{
+		.parallux-inner{
+			background-attachment: fixed;
+		}
+	}
 
 	.parallux-bg{ 
 		top: 0;
@@ -20,12 +35,8 @@ html, body{
 		overflow: hidden;
 		-webkit-backface-visibility: hidden;
 		-webkit-perspective: 1000;
-		&.fixed{
-			position: fixed; 
-		}
-		&.relative{
-			position: relative;		  	
-		}
+		position: fixed; 
+
 		
 		.parallux-inner{
 	  	top: 0px;
@@ -40,7 +51,6 @@ html, body{
 			background-position: 50%;
 			background-size: cover;
 			//To fix a bug when text inside jump in Firefox/Safari
-			background-attachment: fixed;
 			background-image: url();
 			-webkit-backface-visibility: hidden;
 			-webkit-perspective: 1000;
