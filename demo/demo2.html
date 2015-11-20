@@ -11,7 +11,7 @@
 	  <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 		<script type="text/javascript" src="../dist/custom.modernizr.min.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,300' rel='stylesheet' type='text/css'>
+		<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,300' rel='stylesheet' type='text/css'> -->
 		<link rel="stylesheet" href="../dist/normalize.min.css">
 		<link rel="stylesheet" href="../dist/jquery.typarallax.min.css">
 		<link rel="stylesheet" href="css/demo.css">
@@ -81,7 +81,7 @@
 				<!-- Parallax foreground with the same size and transparent -->
 				<div class="text">
 					<h2>Lorem ipsum dolor sit amet.</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit recusandae, et pariatur, iste ab cupiditate officia! Ipsa amet voluptatum, ea quia consequatur, tempora esse laboriosam voluptas molestias quibusdam, provident! Excepturi itaque magnam unde amet dolorum dolorem, numquam vel atque architecto.</p>
+					<p>Ipsa amet voluptatum, ea quia consequatur, tempora esse laboriosam voluptas molestias quibusdam, provident! Excepturi itaque magnam unde amet dolorum dolorem, numquam vel atque architecto.</p>
 				</div>
 
 			</div>
@@ -90,7 +90,10 @@
 		<script src="../src/jquery.typarallax.js"></script>
 		<script>
 			$(function() {
-				$(".parallux").tyParallax();
+				$(".parallux").tyParallax({
+					enableMobile: true,
+					fullHeight: true
+				});
 			});
 		</script>
 	</body>

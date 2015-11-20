@@ -17,12 +17,12 @@ body {
   -o-text-shadow: 1px 1px 3px #000;
   text-shadow: 1px 1px 3px #000; }
   .text h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
     text-transform: uppercase; }
   .text p {
     font-weight: 300;
-    font-size: 1.5em; }
+    font-size: 1.2em; }
 
 .separator {
   max-width: 960px;
@@ -37,7 +37,6 @@ body {
     color: #fff;
     max-width: 50%;
     margin-left: 25%;
-    font-size: 1.5em;
     -webkit-text-shadow: 1px 1px 3px #000;
     -moz-text-shadow: 1px 1px 3px #000;
     -ms-text-shadow: 1px 1px 3px #000;
@@ -46,6 +45,7 @@ body {
     .text h2 {
       font-size: 2.5em; }
     .text p {
+      font-size: 1.5em;
       font-weight: 300; }
 
   .csstransforms .text {

@@ -53,6 +53,9 @@ I have been trying to find a light jquery parallax plugin, to do parallax with a
 
 ##Features
 
+####Tiny and simple
+With ~4kb only, and just 4 options, the plugin is quite simple and straightforward
+
 ####Parallaxing everything
 
 You can add all kind of content inside the background layer, it will works. I tested with videos, images (`<img>` tags), background, sliders (slick), text, and it works just fine, since CSS3 translate3D create a layer and use hardware accelerator.
@@ -68,7 +71,7 @@ If the browser don't support translate3D, I decided to not do parallax at all. B
 In the last version of Safari and Chrome for mobile, there is already support for translate3d! That is great, but still is not very smooth and depends a lot of the mobile hardware. For example, in Safari and iPhone 6 works great, but not in Chrome in a regular Android device, so I added an option (`enableMobile=false`) and it's up to you to enable parallax on mobile devices.
 
 ####Crossbrowser issues resolved
-You don't want to know how many crossbrowser issues I went trough while developing this plugin, but most of them are resolved using CSS hacks and scroll improvements, thanks to [StackOverflow](stackoverflow.com/users/670377/tom-sarduy)
+You don't want to know how many crossbrowser issues I went trough while developing this plugin, but most of them are resolved using CSS hacks and scroll improvements, thanks to [StackOverflow](stackoverflow.com/users/670377/tom-sarduy). 
 
 ## Structure
 

@@ -11,7 +11,7 @@
 	  <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 		<script type="text/javascript" src="../dist/custom.modernizr.min.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,300' rel='stylesheet' type='text/css'>
+		<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,300' rel='stylesheet' type='text/css'> -->
 		<link rel="stylesheet" href="../dist/normalize.min.css">
 		<link rel="stylesheet" href="../dist/jquery.typarallax.min.css">
 		<link rel="stylesheet" href="css/demo.css">
@@ -58,7 +58,8 @@
 			$(function() {
 				$(".parallux").tyParallax(
 					{
-						fullHeight: true
+						fullHeight: false,
+						enableMobile: true
 					}
 				);
 			});
