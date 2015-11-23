@@ -376,7 +376,7 @@
                     only do parallax in one or two layers at the same time.
                 */
 
-                $back.css('transform', 'translate3d(0,-9000px,0)');
+                $back.css('transform', 'translate3d(0,100%,0)');
             }
         }
     };
