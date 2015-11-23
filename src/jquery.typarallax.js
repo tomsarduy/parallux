@@ -254,6 +254,9 @@
                             this.disableParallax();
                         }
                     }
+                    else{
+                        $window.scroll();
+                    }
                 }
             }
             
