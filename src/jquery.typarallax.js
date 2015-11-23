@@ -177,8 +177,7 @@
 
             //Updating `this` context so we use it with jQuery
             var self = this,
-                $cover = $(element).find("img.cover");
-                
+                $cover = $(element).find("img.cover, video.cover");
             self.simulateCover();
 
             //Onload image event
@@ -281,7 +280,7 @@
 
             var $winH = $window.height(),
                 $winW = $window.width(),
-                $img =  $(this.element).find('img.cover');
+                $img =  $(this.element).find('img.cover, video.cover');
 
             $img.css({
                 'width': 'auto',
