@@ -188,7 +188,7 @@
             //Firefox onload issue
             if($cover.complete){ 
                 $cover.load(); 
-            }
+            } 
 
             //On ResizeOrientationChange update parallax items
             $window.bind('orientationchange, resize', function() {
@@ -199,7 +199,7 @@
                 }
             });
 
-            var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+            var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
             //Issue with Safari iPad and iPhones
             if(!is_mobile && !is_safari){
