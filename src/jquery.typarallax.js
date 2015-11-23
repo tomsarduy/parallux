@@ -178,6 +178,8 @@
             //Updating `this` context so we use it with jQuery
             var self = this,
                 $cover = $(element).find("img.cover");
+                
+            self.simulateCover();
 
             //Onload image event
             $cover.one("load", function() {
@@ -188,7 +190,8 @@
             //Firefox onload issue
             if($cover.complete){ 
                 $cover.load(); 
-            } 
+            }
+
 
             //On ResizeOrientationChange update parallax items
             $window.bind('orientationchange, resize', function() {
@@ -329,9 +332,12 @@
                 $el.find('.parallux-bg').height($el.height());
             }
             if(!bgset){
-                $inner.hasClass('dark')?
-                    $inner.addClass('dark-'+ $rand):
+                if($inner.hasClass('dark')){
+                    $inner.addClass('dark-'+ $rand);
+                }
+                if($inner.hasClass('light')){
                     $inner.addClass('light-'+ $rand);
+                }
                 bgset=true;
             }
         },
