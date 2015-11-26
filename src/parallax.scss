@@ -2,6 +2,7 @@ html, body{
 	height: 100%;
 }
 .parallux.not-full{
+	overflow: hidden;
 	.parallux-bg{
 		height: 100%;
 		bottom: initial;
