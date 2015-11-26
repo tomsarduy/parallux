@@ -201,6 +201,7 @@
 			});
 
 			var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+			var is_ipad = navigator.userAgent.match(/iPad/i) != null;
 
 			//Issue with Safari iPad and iPhones
 			if(!is_mobile && !is_safari){
@@ -208,7 +209,7 @@
 				$(element).addClass('bg-fixed');
 			}
 
-			if(is_mobile){
+			if(is_mobile || is_ipad){
 
 				$(element).css('overflow','hidden');
 				
@@ -218,6 +219,7 @@
 					$window.scroll(function () {
 						self.updateIndex();
 					});
+					$window.scroll();
 				}
 
 				else if(this.options.onMobile === 'parallax' && animate3d){
@@ -233,53 +235,41 @@
 				}
 			}
 
+
+
 			else{
 
 				if(animate3d){
 
-					//If is Desktop is better to throw it directly in scroll
-					$window.scroll(function () {
-						self.render();
-					});
-
-					// var mobileRender = self.render.bind(self);
-					// interval = setInterval(function () {
-					// 	window.requestAnimationFrame(mobileRender);
-					// }, 10);
+						//If is Desktop is better to throw it directly in scroll
+						$window.scroll(function () {
+							self.render();
+						});
 
 
-					$window.on('touchmove', function(event) {
-					    //Prevent the window from being scrolled. 
-					    self.render();
+						//IE Fix
+						if(detectIE()) { // if IE
 
-					    //Do something like call window.scrollTo to mimic the scrolling
-					    //request the user made.
-					});
+							if(detectIE()>=11){
+								$('body').on("mousewheel", function () {
+									// remove default behavior
+									event.preventDefault(); 
 
-
-					//IE Fix
-					if(detectIE()) { // if IE
-
-						if(detectIE()>=11){
-							$('body').on("mousewheel", function () {
-								// remove default behavior
-								event.preventDefault(); 
-
-								//scroll without smoothing
-								var wheelDelta = event.wheelDelta;
-								var currentScrollPosition = window.pageYOffset;
-								window.scrollTo(0, currentScrollPosition - wheelDelta/4);
-							});
-							$window.scroll();
+									//scroll without smoothing
+									var wheelDelta = event.wheelDelta;
+									var currentScrollPosition = window.pageYOffset;
+									window.scrollTo(0, currentScrollPosition - wheelDelta/4);
+								});
+								$window.scroll();
+							}
+							else{
+								$(window).off('scroll');
+								this.disableParallax();
+							}
 						}
 						else{
-							$(window).off('scroll');
-							this.disableParallax();
+							$window.scroll();
 						}
-					}
-					else{
-						$window.scroll();
-					}
 				}
 				else{
 					this.disableParallax();  
@@ -401,7 +391,7 @@
 				then we bring the corresponding background layer to that position and parallax is applied
 			*/
 
-			if(($winST+$window.height()+70 >= $offsetTop) && $winST <= $offsetTop + $front.height()){
+			if(($winST+$window.height() >= $offsetTop) && $winST <= $offsetTop + $front.height()){
 				
 				//Calculating the speed of the parallax
 				var $diffElem = (($scrollY-$offsetTop)/1.3).toFixed(0)+ 'px';
