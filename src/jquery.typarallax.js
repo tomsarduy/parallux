@@ -238,34 +238,48 @@
 				if(animate3d){
 
 					//If is Desktop is better to throw it directly in scroll
-						$window.scroll(function () {
-							self.render();
-						});
+					$window.scroll(function () {
+						self.render();
+					});
+
+					// var mobileRender = self.render.bind(self);
+					// interval = setInterval(function () {
+					// 	window.requestAnimationFrame(mobileRender);
+					// }, 10);
 
 
-						//IE Fix
-						if(detectIE()) { // if IE
+					$window.on('touchmove', function(event) {
+					    //Prevent the window from being scrolled. 
+					    self.render();
 
-							if(detectIE()>=11){
-								$('body').on("mousewheel", function () {
-									// remove default behavior
-									event.preventDefault(); 
+					    //Do something like call window.scrollTo to mimic the scrolling
+					    //request the user made.
+					});
 
-									//scroll without smoothing
-									var wheelDelta = event.wheelDelta;
-									var currentScrollPosition = window.pageYOffset;
-									window.scrollTo(0, currentScrollPosition - wheelDelta/4);
-								});
-								$window.scroll();
-							}
-							else{
-								$(window).off('scroll');
-								this.disableParallax();
-							}
-						}
-						else{
+
+					//IE Fix
+					if(detectIE()) { // if IE
+
+						if(detectIE()>=11){
+							$('body').on("mousewheel", function () {
+								// remove default behavior
+								event.preventDefault(); 
+
+								//scroll without smoothing
+								var wheelDelta = event.wheelDelta;
+								var currentScrollPosition = window.pageYOffset;
+								window.scrollTo(0, currentScrollPosition - wheelDelta/4);
+							});
 							$window.scroll();
 						}
+						else{
+							$(window).off('scroll');
+							this.disableParallax();
+						}
+					}
+					else{
+						$window.scroll();
+					}
 				}
 				else{
 					this.disableParallax();  
@@ -349,7 +363,7 @@
 
 			if(this.options.fullHeight){
 				var extra = 0;
-				if(is_mobile){
+				if(is_mobile || Modernizr.mq('only screen and (max-width: 1024px)')){
 					extra = 70;
 				}
 				$el.height($window.height() + extra);
@@ -387,7 +401,7 @@
 				then we bring the corresponding background layer to that position and parallax is applied
 			*/
 
-			if(($winST+$window.height() >= $offsetTop) && $winST <= $offsetTop + $front.height()){
+			if(($winST+$window.height()+70 >= $offsetTop) && $winST <= $offsetTop + $front.height()){
 				
 				//Calculating the speed of the parallax
 				var $diffElem = (($scrollY-$offsetTop)/1.3).toFixed(0)+ 'px';
