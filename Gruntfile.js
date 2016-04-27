@@ -1,3 +1,5 @@
+// TODO
+
 module.exports = function(grunt) {
 
 	grunt.initConfig({
@@ -23,14 +25,14 @@ module.exports = function(grunt) {
 				banner: "<%= meta.banner %>"
 			},
 			dist: {
-				src: ["src/jquery.boilerplate.js"],
-				dest: "dist/jquery.boilerplate.js"
+				src: ["src/jquery.parallux.js"],
+				dest: "dist/jquery.parallux.js"
 			}
 		},
 
 		// Lint definitions
 		jshint: {
-			files: ["src/jquery.boilerplate.js"],
+			files: ["src/jquery.parallux.js"],
 			options: {
 				jshintrc: ".jshintrc"
 			}
@@ -39,8 +41,8 @@ module.exports = function(grunt) {
 		// Minify definitions
 		uglify: {
 			my_target: {
-				src: ["dist/jquery.boilerplate.js"],
-				dest: "dist/jquery.boilerplate.min.js"
+				src: ["dist/jquery.parallux.js"],
+				dest: "dist/jquery.parallux.min.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"

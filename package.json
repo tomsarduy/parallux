@@ -1,41 +1,33 @@
 {
-  "name": "jquery-boilerplate",
-  "version": "3.5.0",
-  "description": "A jump-start for jQuery plugins development.",
+  "name": "jquery-parallux",
+  "version": "0.0.1",
+  "description": "Parallax effect with esteroids. Optimized, cross browser and works with everything (background videos, images, slick...)",
   "keywords": [
     "jquery-plugin",
     "jquery",
-    "boilerplate",
+    "parallax",
+    "efect parallax",
+    "video parallax",
     "plugins"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jquery-boilerplate/jquery-boilerplate.git"
+    "url": "https://github.com/tomsarduy/parallux.git"
   },
   "bugs": {
-    "url": "https://github.com/jquery-boilerplate/jquery-boilerplate/issues"
+    "url": "https://github.com/tomsarduy/parallux/issues"
   },
   "author": {
-    "name": "Zeno Rocha",
-    "email": "zno.rocha@gmail.com",
-    "url": "https://github.com/zenorocha"
+    "name": "Tom Sarduy",
+    "email": "tom.sarduy@gmail.com",
+    "url": "https://github.com/tomsarduy"
   },
-  "homepage": "http://jqueryboilerplate.com",
+  "homepage": "http://kaffeinelab.com",
   "contributors": [
     {
-      "name": "Zeno Rocha",
-      "email": "zno.rocha@gmail.com",
-      "url": "https://github.com/zenorocha"
-    },
-    {
-      "name": "Addy Osmani",
-      "email": "addyosmani@gmail.com",
-      "url": "https://github.com/addyosmani"
-    },
-    {
-      "name": "Helder Santana",
-      "email": "heldr@me.com",
-      "url": "https://github.com/heldr"
+      "name": "Yoan Ribot",
+      "email": "y.ribot@gmail.com",
+      "url": ""
     }
   ],
   "license": "MIT",

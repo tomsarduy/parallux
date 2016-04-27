@@ -25,7 +25,7 @@
 	// Create the defaults once
 	'use strict';
 
-	var pluginName = "tyParallax",
+	var pluginName = "parallux",
 		$window = $(window),
 		interval,
 		bgset = false,
