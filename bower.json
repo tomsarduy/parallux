@@ -1,18 +1,19 @@
 {
-	"name": "jquery-boilerplate",
-	"version": "3.5.0",
+	"name": "parallux",
+	"version": "0.5.0",
 	"homepage": "http://jqueryboilerplate.com",
 	"authors": [
-		"Zeno Rocha <hi@zenorocha.com>"
+		"Tom Sarduy <tom.sarduy@gmail.com>"
+		"Yoan Ribot <yoanribot@gmail.com>"
 	],
-	"description": "A jump-start for jQuery plugins development.",
-	"main": "src/jquery.boilerplate.js",
+	"description": "Another jquery crossbrowser parallax plugin for performance obsessed.",
+	"main": "src/jquery.parallux.js",
 	"keywords": [
 		"jquery",
 		"plugin",
-		"boilerplate",
-		"jquery-plugin",
-		"jquery-boilerplate"
+		"parallax",
+		"full height",
+		"scroll"
 	],
 	"license": "MIT"
 }

@@ -1,0 +1,59 @@
+html, body {
+  height: 100%; }
+
+.parallux.not-full {
+  overflow: hidden; }
+  .parallux.not-full .parallux-bg {
+    height: 100%;
+    bottom: initial; }
+
+.parallux.no-parallax {
+  overflow: hidden; }
+  .parallux.no-parallax .parallux-bg {
+    position: relative; }
+  .parallux.no-parallax .parallux-bg, .parallux.no-parallax .parallux-inner {
+    background-attachment: initial; }
+
+.parallux {
+  position: relative; }
+  .parallux.bg-fixed .parallux-inner {
+    background-attachment: fixed; }
+  .parallux .parallux-bg {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    position: fixed; }
+    .parallux .parallux-bg .parallux-inner {
+      top: 0px;
+      left: 0px;
+      position: relative;
+      min-width: 100%;
+      min-height: 100%;
+      height: auto;
+      background-color: white;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
+      background-image: url();
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000; }
+      .parallux .parallux-bg .parallux-inner img {
+        max-width: 100%;
+        max-height: 100%;
+        display: none; }
+      .parallux .parallux-bg .parallux-inner.dark-1 {
+        background-color: #084550; }
+      .parallux .parallux-bg .parallux-inner.dark-2 {
+        background-color: #292A31; }
+      .parallux .parallux-bg .parallux-inner.dark-3 {
+        background-color: #2B443B; }
+      .parallux .parallux-bg .parallux-inner.light-1 {
+        background-color: #E2EAD9; }
+      .parallux .parallux-bg .parallux-inner.light-2 {
+        background-color: #E4DFF3; }
+      .parallux .parallux-bg .parallux-inner.light-3 {
+        background-color: #F9E2D4; }

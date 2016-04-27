@@ -1,0 +1,85 @@
+html, body{
+	height: 100%;
+}
+.parallux.not-full{
+	overflow: hidden;
+	.parallux-bg{
+		height: 100%;
+		bottom: initial;
+	}
+}
+
+.parallux.no-parallax{
+	overflow: hidden;
+	.parallux-bg{
+		position: relative;
+	}
+	.parallux-bg, .parallux-inner{
+		background-attachment: initial;
+	}
+}
+
+.parallux{
+
+	position: relative;
+	&.bg-fixed{
+		.parallux-inner{
+			background-attachment: fixed;
+		}
+	}
+
+	.parallux-bg{ 
+		top: 0;
+		left:0;
+		right: 0;
+		height: 100%;
+		overflow: hidden;
+		-webkit-backface-visibility: hidden;
+		-webkit-perspective: 1000;
+		position: fixed; 
+
+		
+		.parallux-inner{
+	  	top: 0px;
+			left: 0px;
+			position: relative;
+
+			min-width: 100%;
+			min-height: 100%;
+			height: auto;
+			background-color: white;
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: cover;
+			//To fix a bug when text inside jump in Firefox/Safari
+			background-image: url();
+			-webkit-backface-visibility: hidden;
+			-webkit-perspective: 1000;
+
+			img{
+				max-width: 100%;
+				max-height: 100%;
+				display: none;
+			}
+
+			&.dark-1{
+				background-color: #084550;
+			}
+			&.dark-2{
+				background-color: #292A31;
+			}
+			&.dark-3{
+				background-color: #2B443B;
+			}
+			&.light-1{
+				background-color: #E2EAD9;
+			}	
+			&.light-2{
+				background-color: #E4DFF3;
+			}
+			&.light-3{
+				background-color: #F9E2D4;
+			}
+		}
+	}
+}
