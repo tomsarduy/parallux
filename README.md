@@ -1,6 +1,6 @@
 # jQuery Parallux
 
-### Parallax for everything without complications
+### Parallax everything
 
 I have been trying to find a light jquery parallax plugin, to do parallax with any kind of content (video, images, texts, sliders), but there was just few options and most of them just support background images and the performance was not good enough, and no fallback for old browsers not supporting translate3D. At the end, I came up with my own solution after reading and research about the current support/issues/bugs with the parallax scroll effect.
 
@@ -104,6 +104,11 @@ Contains a simple HTML file to demonstrate your plugin.
 Have you got in this repo and still not sure about using this?
 
 Well, extending jQuery with plugins and methods is very powerful and can save you and your peers a lot of development time by abstracting your most clever functions into plugins.
+
+## Authors
+
+[Tom Sarduy](https://github.com/tomsarduy)
+[Yoan Ribot](https://github.com/yoanribot)
 
 ## Contributing
 
