@@ -107,7 +107,7 @@ Well, extending jQuery with plugins and methods is very powerful and can save yo
 
 ## Authors
 
-[Tom Sarduy](https://github.com/tomsarduy)
+[Tom Sarduy](https://github.com/tomsarduy)  
 [Yoan Ribot](https://github.com/yoanribot)
 
 ## Contributing
