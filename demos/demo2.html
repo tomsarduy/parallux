@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+	  <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Parallax Demo using background image</title>
+	  
+	  <meta name="description" content="">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+		<!-- Normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    
+    <!-- Roboto -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,300' rel='stylesheet' type='text/css'>
+
+		<!-- Plugin base css -->
+		<link rel="stylesheet" href="../dist/jquery.parallux.min.css">
+
+		<!-- General demo styles -->
+		<link rel="stylesheet" href="css/demos.css">
+
+		<!-- specific styles -->
+		<link rel="stylesheet" href="css/demo2.css">
+	</head>
+
+	<body>
+		<!-- Parallax item -->
+		<div class="parallux">
+
+			<!-- Background layer -->
+			<div class="parallux-bg fixed">
+				<!-- Div for using translate3d -->
+				<div class="parallux-inner" id="bg-1">
+
+					<!-- Here you can insert any HTML-->
+					
+				</div>
+			</div>
+
+			<!-- Parallax foreground with the same size and transparent -->
+			<div class="text">
+				<h2>Lorem ipsum dolor</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, enim. Voluptas, deleniti, eaque dolore, expedita delectus ab accusamus sint quas voluptates corrupti autem quia eos sequi! Autem, debitis, incidunt! Aliquid?</p>
+			</div>
+
+		</div>
+
+		<!-- Parallax Item -->
+		<div class="parallux">
+
+			<!-- Background layer -->
+			<div class="parallux-bg fixed">
+
+				<!-- Div for using translate3d -->
+				<div class="parallux-inner" id="bg-2">
+					
+					<!-- Everything inside parallux-inner will do parallax as well -->
+					<div class="text">
+						<h2>Lorem ipsum dolor sit amet.</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit recusandae, et pariatur, iste ab cupiditate officia! Ipsa amet voluptatum, ea quia consequatur, tempora esse laboriosam voluptas molestias quibusdam, provident! Excepturi itaque magnam unde amet dolorum dolorem, numquam vel atque architecto.</p>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Parallax foreground with the same size and transparent -->
+
+		</div>
+			
+		<!-- Parallax Item -->
+		<div class="parallux">
+
+			<!-- Background layer -->
+			<div class="parallux-bg fixed">
+
+				<!-- Div for using translate3d -->
+				<div class="parallux-inner" id="bg-3">
+
+					<!-- Here you can insert any HTML -->
+
+				</div>
+
+			</div>
+
+			<!-- Parallax foreground with the same size and transparent -->
+			<div class="text">
+				<h2>Lorem ipsum dolor sit amet.</h2>
+				<p>Ipsa amet voluptatum, ea quia consequatur, tempora esse laboriosam voluptas molestias quibusdam, provident! Excepturi itaque magnam unde amet dolorum dolorem, numquam vel atque architecto.</p>
+			</div>
+
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+		<script src="../src/jquery.parallux.js"></script>
+		<script>
+			$(function() {
+				$(".parallux").parallux({
+					onMobile: 'fixed',
+					fullHeight: true
+				});
+			});
+		</script>
+	</body>
+</html>
