@@ -4,23 +4,23 @@
 	"homepage": "https://github.com/tomsarduy/parallux",
 	"authors": [
 		"Tom Sarduy <tom.sarduy@gmail.com>"
-		"Yoan Ribot <yoanribot@gmail.com>"
 	],
 	"ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests",
-    "package.json",
-    "index.html"
+    "tests"
   ],
   "dependencies": {
     "jquery": ">=1.7"
   },
   "license": "MIT",
 	"description": "Another jquery crossbrowser parallax plugin for performance obsessed.",
-	"main": "src/jquery.parallux.js",
+	"main": [
+		"src/jquery.parallux.js",
+		"src/jquery.parallux.scss"
+	],
 	"keywords": [
 		"jquery",
 		"plugin",
