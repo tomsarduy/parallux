@@ -36,11 +36,18 @@ body {
     text-align: center;
     color: #fff;
     max-width: 50%;
+    margin-left: 25%;
     -webkit-text-shadow: 1px 1px 3px #000;
     -moz-text-shadow: 1px 1px 3px #000;
     -ms-text-shadow: 1px 1px 3px #000;
     -o-text-shadow: 1px 1px 3px #000;
-    text-shadow: 1px 1px 3px #000;
+    text-shadow: 1px 1px 3px #000; }
+    .text h2 {
+      font-size: 2.5em; }
+    .text p {
+      font-size: 1.5em;
+      font-weight: 300; }
+  .csstransforms .text, .csstransforms3d .text {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -49,10 +56,4 @@ body {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); } 
-  }
-    .text h2 {
-      font-size: 2.5em; }
-    .text p {
-      font-size: 1.5em;
-      font-weight: 300; }
+    transform: translate(-50%, -50%); } }
