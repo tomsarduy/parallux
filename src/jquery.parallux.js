@@ -34,7 +34,6 @@
 		defaults   = {
 			fullHeight: true,
 			onMobile: 'fixed', //can be 'scroll' or 'parallax'
-			onImageLoad: 'fadeIn'
 		};
 
 	// mobile javascript check for specific cases

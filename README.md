@@ -6,15 +6,16 @@ I have been trying to find a light jquery parallax plugin, to do parallax with a
 
 ## Usage
 
-1. Include jQuery:
+1. Just add a link to the css file in your `<head>`:
+
+	```html
+	<link rel="stylesheet" href="../dist/jquery.parallux.min.css">
+	```
+
+1. Then, before your closing `<body>` tag add:
 
 	```html
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-	```
-
-2. Include plugin's code:
-
-	```html
 	<script src="dist/jquery.parallux.min.js"></script>
 	```
 
@@ -44,17 +45,20 @@ I have been trying to find a light jquery parallax plugin, to do parallax with a
 4. Call the plugin
 
 	```javascript
-	$("#element").parallux({
-		fullHeight: true,
-    enableMobile: false,
-    onImageLoad: 'fadeIn'
-	});
+	$(".parallux").parallux();
 	```
+
+## Settings
+
+Option | Type | Default | Description
+------ | ---- | ------- | -----------
+fullHeight | boolean | true | Enable/disable full page parallax. Check `demo1.html` and `demo2.html` for full page, `demo3.html` for auto height parallax.
+onMobile | string | scroll | Define the behavior of the plugin for mobiles. The `"scroll"` option will show the parallax section one under the other, `"fixed"` will simulate the parallax effect, but without transitions and the `parallax` option will apply the parallax effect, only recommended for latest devices.
 
 ##Features
 
 ####Tiny and simple
-With ~4kb only, and just 4 options, the plugin is quite simple and straight forward
+With ~6kb only, and just 4 options, the plugin is quite simple and straight forward
 
 ####Parallaxing everything
 
@@ -78,32 +82,29 @@ You don't want to know how many crossbrowser issues I went trough while developi
 The basic structure of the project is given in the following way:
 
 ```
-├── demo/
-│   └── index.html
+├── demos/
 ├── dist/
-│   ├── jquery.parallux.js
+│   ├── jquery.parallux.min.css
+│   ├── jquery.parallux.css
 │   └── jquery.parallux.min.js
 ├── src/
-│   ├── jquery.boilerplate.coffee
-│   └── jquery.boilerplate.js
+│   ├── jquery.parallux.js
+│   └── jquery.parallux.scss
 ├── .editorconfig
 ├── .gitignore
 ├── .jshintrc
 ├── .travis.yml
-├── boilerplate.jquery.json
-├── Gruntfile.js
-└── package.json
+├── bower.js
+├── CONTRIBUTING.md
+├── gulpfile.js
+├── LICENSE
+├── package.json
+└── README.md
 ```
 
-#### [demo/](https://github.com/jquery-boilerplate/boilerplate/tree/master/demo)
+#### [demos/](https://github.com/tomsarduy/parallux/tree/master/demos)
 
-Contains a simple HTML file to demonstrate your plugin.
-
-#### How did we get here?
-
-Have you got in this repo and still not sure about using this?
-
-Well, extending jQuery with plugins and methods is very powerful and can save you and your peers a lot of development time by abstracting your most clever functions into plugins.
+Contains some demos to demonstrate the plugin.
 
 ## Authors
 
@@ -116,4 +117,4 @@ Create a pull request, issue or send me a message [@TomSarduy](https://twitter.c
 
 ## License
 
-[MIT License](http://tomsarduy.mit-license.org/) © Tom Sarduy
+[Apache License](https://github.com/tomsarduy/parallux/blob/master/LICENSE) © Tom Sarduy
