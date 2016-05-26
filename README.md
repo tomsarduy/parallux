@@ -53,6 +53,7 @@ I have been trying to find a light jquery parallax plugin, to do parallax with a
 ```sh
 # Bower
 bower install --save parallux
+```
 
 ## Settings
 
