@@ -86,7 +86,7 @@ If the browser don't support translate3D, I decided to not do parallax at all. B
 In the last version of Safari and Chrome for mobile, there is already support for translate3d! That is great, but still is not very smooth and depends a lot of the mobile hardware. For example, in Safari and iPhone 6 works great, but not in Chrome in a regular Android device, so I added an option (`enableMobile=false`) and it's up to you to enable parallax on mobile devices. Works great in last versions of Chrome and Safari.
 
 #### Crossbrowser issues resolved
-You don't want to know how many crossbrowser issues I went trough while developing this plugin, but most of them are resolved using CSS hacks and scroll improvements, thanks to [StackOverflow](stackoverflow.com/users/670377/tom-sarduy). 
+You don't want to know how many crossbrowser issues I went trough while developing this plugin, but most of them are resolved using CSS hacks and scroll improvements, thanks to [StackOverflow](https://stackoverflow.com/users/670377/tom-sarduy). 
 
 ## Structure
 
